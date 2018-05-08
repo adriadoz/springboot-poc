@@ -7,7 +7,7 @@
 <body>
 	<ul th:each="greeting : ${greetings}">
 		<li th:text=" ${greeting.getContent()} + '!'" /></li>
-	</ul>
-    
+	</ul> 
+	<div th:insert="~{footer :: copyright}"></div>
 </body>
 </html>
