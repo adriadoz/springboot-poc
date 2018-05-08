@@ -1,24 +1,24 @@
 package hello;
 
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
 
-@RestController
+@Controller
 public class AllGreetingsController {
 
-	    private Greeting greeting;
+	    private Iterable<Greeting> allGreeting;
 	    private GreetingRepository repository;
 	    
 	    AllGreetingsController (GreetingRepository repository) {
 	    	this.repository = repository;
 	    }
 
-	    @RequestMapping("/allGreetings")
-	    public Greeting allGreeting(@RequestParam(value="name", defaultValue="World") String name) {
-	    	for (Greeting greeting : this.repository.findAll()) {
-				this.greeting = greeting;
-			}
-	        return this.greeting;
+	    @RequestMapping("/all-greetings")
+	    String allGreeting(Model model, @RequestParam(value="name", defaultValue="World") String name) {
+	    	this.allGreeting = this.repository.findAll();
+	    	model.addAttribute("greetings", this.allGreeting);
+	        return "all-greetings";
 	    }
 }

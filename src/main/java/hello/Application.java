@@ -15,7 +15,8 @@ public class Application{
     @Bean
 	public CommandLineRunner demo(GreetingRepository repository) {
 		return (args) -> {
-			repository.save(new Greeting("Juanitu"));
+			repository.save(new Greeting("Hello Juanitu"));
+			repository.save(new Greeting("Hello Pepe"));
 		};
     }
 }
