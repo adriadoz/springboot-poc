@@ -8,12 +8,12 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class GreetingController {
 
-    private static final String template = "Hello, %s!";
+    
     private Greeting greeting;
 
     @RequestMapping("/greeting")
     String greeting(Model model, @RequestParam(value="name", defaultValue="World") String name) {
-    	greeting = new Greeting(String.format(template, name));
+    	greeting = new Greeting(name);
         model.addAttribute("content", greeting.getContent());
         return "greeting";
     }

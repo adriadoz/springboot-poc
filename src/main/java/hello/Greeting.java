@@ -11,15 +11,16 @@ public class Greeting {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
-    private String content;
+    private String name;
+    private static final String template = "Hello, %s!";
 
     protected Greeting () {}
 
-    public Greeting(String content) {
-        this.content = content;
+    public Greeting(String name) {
+        this.name = name;
     }
 
     public String getContent() {
-        return content;
+        return String.format(template, name);
     }
 }

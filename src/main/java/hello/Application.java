@@ -16,6 +16,8 @@ public class Application{
 	public CommandLineRunner demo(GreetingRepository repository) {
 		return (args) -> {
 			repository.save(new Greeting("Juanitu"));
+			repository.save(new Greeting("Pepitu"));
+			repository.save(new Greeting("Manola"));
 		};
     }
 }
