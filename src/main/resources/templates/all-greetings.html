@@ -5,9 +5,15 @@
     <title>All Greetings!</title>
 </head>
 <body>
-	<ul th:each="greeting : ${greetings}">
-		<li th:text=" ${greeting.getContent()} + '!'" /></li>
+	<ul>
+		<li th:each="greeting : ${greetings}" th:text=" ${greeting.getContent()} + '!'" /></li>
 	</ul> 
 	<div th:insert="~{footer :: copyright}"></div>
 </body>
 </html>
+
+
+
+
+
+
