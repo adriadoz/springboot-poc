@@ -2,9 +2,10 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>Hello Thymeleaf!</title>
+    <title>Greeting!</title>
 </head>
 <body>
     <p th:text=" ${content} + '!'" />
+    <div th:insert="~{footer :: copyright}"></div>
 </body>
 </html>
