@@ -24,5 +24,4 @@ public class Application{
 			repository.save(new Greeting("Manola"));
 		};
     }
-    
 }

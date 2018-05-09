@@ -10,10 +10,9 @@ import org.springframework.stereotype.Controller;
 
 @Controller
 public class GreetingController {
-
     
     private Greeting greeting;
-
+    
     @RequestMapping("/greeting")
     String greeting(Model model, @RequestParam(value="name", defaultValue="World") String name) {
     	greeting = new Greeting(name);
