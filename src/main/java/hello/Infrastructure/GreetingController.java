@@ -1,7 +1,10 @@
-package hello;
+package hello.Infrastructure;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import hello.Domain.Greeting;
+
 import org.springframework.ui.Model;
 import org.springframework.stereotype.Controller;
 

@@ -1,23 +1,26 @@
-package hello;
+package hello.Infrastructure;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
-public class AddGreeting {
+import hello.Domain.Greeting;
+import hello.Services.AddGreetingService;
 
-	    private GreetingRepository repository;
+@RestController
+public class AddGreetingController {
+
+	    private AddGreetingService addGreeting;
 	    
-	    AddGreeting (GreetingRepository repository) {
-	    	this.repository = repository;
+	    AddGreetingController (AddGreetingService addGreeting) {
+	    	this.addGreeting = addGreeting;
 	    }
 
 	    @RequestMapping(value="/add-greeting", method=RequestMethod.POST)
 	    public Greeting addGreeting(@RequestParam(value="name", defaultValue="Default") String name) {
 	    	Greeting greeting = new Greeting(name);
-	    	this.repository.save(greeting);
+	    	addGreeting.run(greeting);
 	        return greeting;
 	    }
 }
