@@ -1,1 +1,23 @@
+body{
+	margin: 0;
+	font-family: arial;
+}
+header {
+    background-color: cadetblue;
+    color: white;
+    margin: 0 auto;
+    text-align: center;
+    padding: 22px;
+}
 li{color:blue}
+footer {
+    background-color: darkgray;
+    text-align: center;
+    color: white;
+    padding: 10px;
+}
+main {
+    min-height: calc(100vh - 197px);
+    max-width: 600px;
+    margin: 0 auto;
+}

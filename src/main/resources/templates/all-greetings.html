@@ -5,9 +5,11 @@
 </head>
 <body>
 	<header th:replace="header :: header (pageTitle='All Greetings! 👋👋👋')"></header>
-	<ul>
-		<li th:each="greeting : ${greetings}" th:text=" ${greeting.getContent()} + '!'" /></li>
-	</ul> 
+	<main>
+		<ul>
+			<li th:each="greeting : ${greetings}" th:text=" ${greeting.getContent()} + '!'" /></li>
+		</ul> 
+	</main>
 	<footer th:include="~{footer :: copyright}"></footer>
 </body>
 </html>
