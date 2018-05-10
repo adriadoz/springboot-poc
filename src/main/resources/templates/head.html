@@ -3,8 +3,10 @@
 
 <html xmlns:th="http://www.thymeleaf.org">
 
-	<head th:fragment="links">
-      <link th:href="@{/css/greetings.css}" rel="stylesheet" />
+	<head th:fragment="layoutHead (pageTitle)">
+		<meta charset="UTF-8"/>
+      	<link th:href="@{/css/greetings.css}" rel="stylesheet" />
+      	<title th:text="${pageTitle}">Template title</title>
     </head>
     
   <body>

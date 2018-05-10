@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8"/>
+<head th:replace="head :: layoutHead (pageTitle='Greeting!')">
     <title>Greeting!</title>
 </head>
 <body>
     <p th:text=" ${content} + '!'" />
-    <div th:insert="~{footer :: copyright}"></div>
+    <footer th:include="~{footer :: copyright}"></footer>
 </body>
 </html>

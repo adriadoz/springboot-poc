@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:include="~{head :: links}">
-    <meta charset="UTF-8"/>
+<head th:replace="head :: layoutHead (pageTitle='All Greetings!')">
     <title>All Greetings!</title>
 </head>
 <body>
 	<ul>
 		<li th:each="greeting : ${greetings}" th:text=" ${greeting.getContent()} + '!'" /></li>
 	</ul> 
-	<div th:insert="~{footer :: copyright}"></div>
+	<footer th:include="~{footer :: copyright}"></footer>
 </body>
 </html>
 
