@@ -4,6 +4,7 @@
     <title>Greeting!</title>
 </head>
 <body>
+	<header th:replace="header :: header (pageTitle='Greeting 👋')"></header>
     <p th:text=" ${content} + '!'" />
     <footer th:include="~{footer :: copyright}"></footer>
 </body>

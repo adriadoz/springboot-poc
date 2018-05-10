@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="head :: layoutHead (pageTitle='All Greetings!')">
+<head th:replace="head :: layoutHead (pageTitle='All Greetings! 👋👋👋')">
     <title>All Greetings!</title>
 </head>
 <body>
+	<header th:replace="header :: header (pageTitle='All Greetings! 👋👋👋')"></header>
 	<ul>
 		<li th:each="greeting : ${greetings}" th:text=" ${greeting.getContent()} + '!'" /></li>
 	</ul> 
